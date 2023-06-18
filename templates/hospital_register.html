@@ -1,0 +1,157 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Turas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="{% url 'home' %}" class="logo"><strong>Turas</strong> Job Portal</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Welcome to Turas</h1>
+											<p>Please register your hospital in our Turas system</p>
+										</header>
+										<!-- Form -->
+											<h3>Registration Form</h3>
+
+											<form method="post" action="{% url 'home' %}">
+												{% csrf_token %}
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="hospitalname" id="hospitalname" value="" placeholder="Name of the Hosipital" required/></br />
+													</div></br />
+												</div>
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="hospitalid" id="hospitalid" value="" placeholder="Hospital Primary Registration ID" required/></br />
+													</div></br />
+												</div>
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="BranchRegiID" id="BranchRegiID" value="" placeholder="Branch Registration id" /></br />
+													</div></br />
+												</div>
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="BranchWebID" id="BranchWebID" value="" placeholder="Branch Web Address" required/></br />
+													</div>
+												</br />
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="email" name="BranchE-mailID" id="BranchE-mailID" value="" placeholder="Branch E-mail Address" required/></br />
+													</div></br />
+
+												<p>Branch Contact Address</p>
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="StreetName1" id="StreetName1" value="" placeholder="Street Name 1" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="StreetName2" id="StreetName2" value="" placeholder="Street Name 2" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="CityID" id="CityID" value="" placeholder="City" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="StateID" id="StateID" value="" placeholder="State" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="ZipCodeID" id="ZipCodeID" value="" placeholder="Zip Code" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="BranchPhoneID" id="BranchPhoneID" value="" placeholder="Branch Phone Number" required/></br />
+													</div>
+
+												<p>Google Map Insert</p>
+
+												<p>Brach Representative Contact</p>
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="FirstName" id="FirstName" value="" placeholder="First Name" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="LastName" id="LastName" value="" placeholder="Last Name" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="PhoneID" id="PhoneID" value="" placeholder="Phone Number" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="email" name="EmailID" id="EmailID" value="" placeholder="Email" required/></br />
+													</div></br />
+
+
+
+													<div class="col-12">
+														<ul class="actions">
+															<li><input type="submit" value="Register" class="primary" /></li>
+															<li><input type="reset" value="Reset" class="primary" /></li>
+														</ul>
+													</div>
+												</div>
+											</form>
+									</div>
+
+								</section>
+
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Turas. All rights reserved. </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Turas</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper dd -->
+	<div id="wrapper">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<!-- Header -->
+				<header id="header">
+					<a href="{{ url_for('home') }}" class="logo"><strong>Turas</strong> Health Care Recruitment Portal</a>
+					<ul class="icons">
+						<li> Welcome, 
+							{% if candidate_name != None %}
+							<strong>{{ candidate_name }}</strong>
+							{% endif %}
+						</li>
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Welcome to Turas,</h1>
+							<p> your one stop<br />
+								for getting your dream job</p>
+						</header>
+						<header class="major">
+							<h2>Moving Nursing Forward!</h2>
+						</header>
+						<p><b>Search Jobs by Nursing
+								Specialties and Location</b></p>
+						<form method="post" action="#">
+							<div class="row gtr-uniform">
+								<div class="col-12">
+									<input type="text" name="title" id="title" value=""
+										placeholder="Job Title, Skill, Speaciality or Employer" />
+								</div>
+								<div class="row gtr-uniform">
+									<div class="col-6 col-12-xsmall">
+										<input type="text" name="location" id="location" value="" placeholder="Location" />
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<select name="distance" id="distance">
+											<option value="">- Distance -</option>
+											<option value="1">Within 0 Miles</option>
+											<option value="1">Within 10 Miles</option>
+											<option value="1">Within 25 Miles</option>
+											<option value="1">Within 50 Miles</option>
+											<option value="1">Within 100 Miles</option>
+										</select>
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<ul class="actions">
+											<li><input type="submit" value="Search" class="primary" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</form>
+
+					</div>
+					
+					<div id="myModal" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h3>Candidate Profile</h3>
+							<div class="box">
+							<p>
+								{% for data in get_candidate_details(candidate_name) %}
+								Name : {{ data[1] }} <br />
+								Candidate ID : {{ data[0] }} <br />
+								Email ID : {{ data[2] }}<br />
+								Date of Birth : {{ data[4] }}<br />
+								Mobile Number : {{ data[5] }}<br />
+								Preferred Work Location : {{ data[7] }}<br />
+								Job Applied : 0<br />
+								Jobs Saved : 0<br />
+								{% endfor %}
+							</p>
+							</div>
+						</div>
+					</div>
+					<div id="myModal3" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span class="close4">&times;</span>
+							<h3>Apply Job</h3>
+							<div class="box">
+								<form method="post" action="#">
+
+
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="FirstNameID" id="FirstNameID" value="" placeholder="First Name" required/></br />
+										</div></br />
+
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="LastNameID" id="LastNameID" value="" placeholder="Last Name" required/></br />
+										</div></br />
+
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="emailId" id="emailId" value="" placeholder="Email" required/></br />
+										</div></br />
+
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="jobID" id="jobID" value="" placeholder="Job Id" required/></br />
+										</div></br />
+
+									<div sclass="row gtr-uniform" class="col-6 col-12-xsmall">Resume upload<br/>
+									<input id="data_10" name="data_10" style="max-width : 450px;" type="file" class="form-control"/>
+									</div></br />
+
+									<div sclass="row gtr-uniform" class="col-6 col-12-xsmall">Add Covering Letter<br/>
+									<input id="data_10" name="data_10" style="max-width : 450px;" type="file" class="form-control"/>
+									</div></br />
+
+
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Submit" class="primary" /></li>
+											<li><input type="reset" value="Reset" class="primary" /></li>
+										</ul>
+									</div>
+
+
+
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+						{% with messages = get_flashed_messages() %}
+						{% if messages %}
+						{% for message in messages %}
+						<div id='hideMe'>
+							<div class="modal-content">
+								<span class="close2">&times;</span>
+								{{ message }}
+							</div>
+						</div>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
+				</section>
+				<!-- Section -->
+
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="#">My Dashboard</a></li>
+						<li><a href="#">My Saved Jobs</a></li>
+						<li><a onClick="openModal3()">Apply Job</a></li>
+						<li><a href="#">Home</a></li>
+					</ul>
+				</nav>
+				<ul class="actions">
+					<li><a onClick="openModal()" class="button primary">View Profile</a></li>
+					<li><a href="{{ url_for('home') }}" class="button">Sign Out</a></li>
+				</ul>
+
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Turas represents our promise to give nurses the support, the resources, and the best environments
+						to
+						succeed.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">recruiting@turas.com</a></li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-home">12 RK Road #1234<br />
+							Chennai, IN 600 03</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Turas. All rights reserved. Design: <a href="#">Navaneeth A</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>

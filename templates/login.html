@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Turas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="{{ url_for('home') }}" class="logo"><strong>Turas</strong> Health Care Recruitment Portal</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Welcome to Turas, your one stop<br />
+											for getting your dream job</h1>
+											<p>Please login to search and apply for open positions</p>
+										</header>
+										<!-- Form -->
+											<h3>Login Form</h3>
+
+											<form method="post" action="{{ url_for('candidate_api.candidate_login') }}">
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="candidate_email" id="demo-name" value="" placeholder="Username" />
+													</div></br />
+												</div>
+												<br />
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="password" name="candidate_password" id="demo-email" value="" placeholder="Password" />
+													</div>
+
+													<div class="col-12">
+														<ul class="actions">
+															<li><input type="submit" value="Login" class="primary" /></li>
+															<li><a href="#" class="button">Forgot Password</a></li>
+														</ul>
+													</div>
+												</div>
+											</form>
+									</div>
+
+								</section>
+
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Turas. All rights reserved. Design: <a href="#">Navaneeth A</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+\
+	</body>
+</html>

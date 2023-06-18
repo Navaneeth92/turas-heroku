@@ -1,0 +1,8 @@
+flask==2.2.4
+requests
+PyJWT
+waitress
+flask_talisman
+gunicorn
+
+

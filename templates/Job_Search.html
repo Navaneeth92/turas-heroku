@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Turas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="{% url 'home' %}" class="logo"><strong>Turas</strong> Job Portal</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>Welcome to Turas</h1>
+											<p>Please enter these fileds to provide accurate results suit your creteria</p>
+										</header>
+										<!-- Form -->
+											<h3>Registration Form</h3>
+
+											<form method="post" action="{% url 'home' %}">
+												{% csrf_token %}
+
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="ProfessionID" id="ProfessionID" value="" placeholder="Profession" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="SpecialityID" id="SpecialityID" value="" placeholder="Speciality" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="locationID" id="locationID" value="" placeholder="Location" required/></br />
+													</div></br />
+
+												<div class="row gtr-uniform">
+													<div class="col-6 col-12-xsmall">
+														<input type="text" name="fullPartID" id="fullPartID" value="" placeholder="Full Time Part Time Both" required/></br />
+													</div></br />
+
+												<p>MAP to show all open positions</p>
+
+
+													</div>
+												</div>
+											</form>
+									</div>
+
+								</section>
+
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Turas. All rights reserved. </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

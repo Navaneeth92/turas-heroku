@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Turas</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<!-- Header -->
+				<header id="header">
+					<a href="{{ url_for('home') }}" class="logo"><strong>Turas</strong> Health Care Recruitment Portal</a>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Welcome to Turas,</h1>
+							<p> your one stop<br />
+								for getting your dream job</p>
+						</header>
+						<p>Nursing Job by Turas is a consultancy helping the highly qualified professionals to achieve
+							their dream job at their preferred destination overseas. We assist the candidates through
+							various processes and help the candidates to complete the required processes for their
+							domestic or International jobs.
+						</p>
+						<ul class="actions">
+							<li><a href="#" class="button big">Learn More</a></li>
+						</ul>
+					</div>
+					<span class="image object">
+						<img src="{{ url_for('static', filename='images/pic10.jpeg') }}" alt="" />
+					</span>
+					<div id="myModal" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<p> Login as a Candidate or Recruiter</p>
+							<ul class="actions">
+								<li><a href="{{ url_for('login') }}" class="button primary">Job Seeker Login</a>
+								</li>
+								<li><a href="{{ url_for('rec_login') }}" class="button">Recruiter Login</a></li>
+							</ul>
+						</div>
+					</div>
+
+						{% with messages = get_flashed_messages() %}
+						{% if messages %}
+						{% for message in messages %}
+						<div id='hideMe'>
+							<div class="modal-content">
+								<span class="close2">&times;</span>
+								{{ message }}
+							</div>
+						</div>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
+
+					<div id="myModal1" class="modal1">
+
+						<!-- Modal content -->
+						<div class="modal-content1">
+							<span class="close1">&times;</span>
+							<p> Register as a Candidate or Recruiter</p>
+							<ul class="actions">
+								<li><a href="{{ url_for('register') }}" class="button primary">Job Seeker
+										Registration</a>
+								</li>
+								<li><a href="{{ url_for('rec_register') }}" class="button">Recruiter Registration</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Moving Nursing Forward!</h2>
+					</header>
+					<p><b>Search Jobs by Nursing
+							Specialties and Location</b></p>
+					<form method="post" action="#">
+						<div class="row gtr-uniform">
+							<div class="col-12">
+								<input type="text" name="title" id="title" value=""
+									placeholder="Job Title, Skill, Speaciality or Employer" />
+							</div>
+							<div class="row gtr-uniform">
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="location" id="location" value="" placeholder="Location" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<select name="distance" id="distance">
+										<option value="">- Distance -</option>
+										<option value="1">Within 0 Miles</option>
+										<option value="1">Within 10 Miles</option>
+										<option value="1">Within 25 Miles</option>
+										<option value="1">Within 50 Miles</option>
+										<option value="1">Within 100 Miles</option>
+									</select>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<ul class="actions">
+										<li><input type="submit" value="Search" class="primary" /></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</form>
+					<header id="header">
+						Nursing Job by Turas is a consultancy helping the highly qualified professionals to
+						achieve
+						their dream job at their preferred destination overseas. We assist the candidates
+						through
+						various processes and help the candidates to complete the required processes for their
+						domestic or International jobs.
+
+					</header>
+					<div class="posts">
+						<article>
+							<a href="#" class="image"><img src="{{ url_for('static', filename='images/pic06.jpeg') }}"
+									alt="" /></a>
+							<h3>About Us</h3>
+							<p>The Turas represents our promise to give nurses the support, the resources, and
+								the
+								best environments to succeed.
+
+								By working together under the Turas , our three entities have immense impact;
+								but
+								also the individual freedom to thrive.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</article>
+
+						<article>
+							<a href="#" class="image"><img src="{{ url_for('static', filename='images/pic01.png') }}"
+									alt="" /></a>
+							<h3>Leadership</h3>
+							<p>Meet the Turas leadership team, giving their all to advance the nursing
+								profession.
+
+								With vast experience across health care, the team is committed to representing
+								the
+								interests of all nurses.
+
+							</p>
+							<ul class="actions">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="{{ url_for('static', filename='images/pic03.png') }}"
+									alt="" /></a>
+							<h3> Enterprise Strategic Plan</h3>
+							<p>Our Turas organization work to achieve our shared vision, mission, and values.
+							</p>
+							<ul class="actions">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</article>
+					</div>
+				</section>
+				<!-- Section -->
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Tired of Searching? Get Recruited Instead.</h2>
+					</header>
+					<div class="features">
+						<article>
+							<span class="icon fa-gem"></span>
+							<div class="content">
+								<h3>Step 1</h3>
+								<p>Complete Your Candidate Profile</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-paper-plane"></span>
+							<div class="content">
+								<h3>Step 2</h3>
+								<p>Tell Us Which Jobs You Like</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-rocket"></span>
+							<div class="content">
+								<h3>Step 3</h3>
+								<p>Receive Interview Invitations</p>
+							</div>
+
+						</article>
+						<article>
+							<span class="icon solid fa-signal"></span>
+							<div class="content">
+								<h3>Step 4</h3>
+								<p>Get Hired</p>
+							</div>
+						</article>
+
+					</div>
+					<div class="col-6 col-12-small">
+						<ul class="actions stacked">
+							<li><a href="#" class="button fit">Create Your Profile</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<header class="major">
+						<h2>Are you a Nurse Recruiter or Hiring Manager?</h2>
+					</header>
+					<p>Introducing Turas.com Recruiting, the new AI-driven matching engine from Turas.com. Our new nurse
+						recruiting solution helps healthcare organizations recruit smarter by recommending nurses for
+						jobs
+						based on their skills and experience, instantly scheduling interviews, and turning candidates
+						into
+						hires faster. Intrigued?</p>
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Leadership</a></li>
+						<li>
+							<span class="opener">Offerings</span>
+							<ul>
+								<li><a href="#">Job Seeker</a></li>
+								<li><a href="#">Recruiter</a></li>
+								<li><a href="#">Hiring Agency</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<ul class="actions">
+					<li><a onClick="openModal()" class="button primary">Login</a></li>
+					<li><a onClick="openModal1()" class="button">Signup</a></li>
+				</ul>
+
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Turas represents our promise to give nurses the support, the resources, and the best environments
+						to
+						succeed.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">recruiting@turas.com</a></li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-home">12 RK Road #1234<br />
+							Chennai, IN 600 03</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Turas. All rights reserved. Design: <a href="#">Navaneeth A</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
